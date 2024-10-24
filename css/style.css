@@ -1,228 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&family=Poppins:wght@200;300;400;500&display=swap');
 *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter',sans-serif;
-}
-:root{
-    --fundo: #f0f0f0;
-    --cor-botao: #ee1515;
-    --cor-borda: #222224;
-    --cor-texto: #222224;
-    --ativar: #831212;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
 }
 body{
-    background: var(--fundo);
+    background: linear-gradient(-45deg,cyan,rgb(55, 0, 128));
     height: 100vh;
-    transition: 1s;
-}
-.navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #222224;
-}
-.icon{
-    width: 5%;
-    margin: 20px;
+    animation: gradient linear infinite alternate 10s;
+    background-size: 300% 300%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-@keyframes rodar {
+@keyframes gradient{
     0%{
-        transform: rotate(0deg);
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 50% 100%;
     }
     100%{
-        transform: rotate(360deg);
+        background-position: 0% 50%;
     }
-}
-@keyframes mexer{
-    0%{
-        transform: translate(0px, 0px);
-    }
-    25%{
-        transform: translate(0px, 10px) rotate(25deg);
-    }
-    75%{
-        transform: translate(0px,-10px) rotate(-25deg);
-    }
-}
-#icon{
-    width: 100%;
-    cursor: pointer;
-}
-#icon:hover{
-    animation: 2s rodar infinite;
-}
-.barra{
-    border: solid var(--cor-botao);
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-}
-#pesquisar{
-    height: 50px;
-    margin: 5px 5px 5px 20px;
-    width: 90%;
-    background: transparent;
-    font-size: 25px;
-    border: none;
-    color: #f0f0f0;
-}
-textarea:focus, input:focus {
-    outline: 0;
-}
-.botao{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 8%;
-    margin: 5px 20px 5px 5px;
-    height: 35px;
-    border-radius: 10px;
-    background: var(--cor-botao);
-    font-size: 25px;
-    color: var(--fundo);
-    font-weight: bold;
-    cursor: pointer;
-    overflow: hidden;
-}
-.botao:active{
-    background: var(--ativar);
-}
-.sound{
-    margin: 20px;
-    width: 4%;
-    color: #222224;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    right:20px;
-    bottom: 20px;
-}
-.tema{
-    margin: 20px;
-    width: 4%;
-    color: #f0f0f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 30px;
-    cursor: pointer;
-}
-#botao-tema{
-    margin: 10px;
-}
-.bi-brightness-high-fill{
-    animation: rodar linear infinite 2s;
-}
-.bi-moon-fill{
-    animation: mexer linear infinite 5s;
 }
 .box{
-    margin: 20px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.pokemons{
-    display: none;
     flex-direction: column;
-    box-shadow: 5px 0px 5px 5px var(--cor-borda);
-    margin: 20px;
-    border-radius: 15px;
-    justify-content: center;
-    color: var(--cor-texto);
     align-items: center;
-    transition: 1s;
-}
-#pokemon{
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.63);
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.384);
     width: 50%;
-    animation: mexer 5s infinite linear;
 }
-@keyframes mexer{
-    0%{
-        transform: rotate(0deg);
-    }
-    25%{
-        transform: rotate(-25deg);
-    }
-    75%{
-        transform: rotate(25deg);
-    }
-}
-.dados{
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#nome{
+.titulo{
+    margin: 50px;
     font-size: 30px;
-    margin: 20px;
-    color: var(--cor-texto);
-}
-#tipo{
-    font-size: 20px;
-    margin: 20px;
-    background: var(--cor-botao);
-    box-shadow: 5px 5px 0px 2px var(--ativar);
-    width: 25%;
     text-align: center;
-    border-radius: 15px;
-    color: var(--fundo);
-    height: 35px;
-    display: none;
-    justify-content: center;
-    align-items: center;
 }
-#desc{
-    font-size: 15px;
+.opcoes{
     margin: 20px;
-    color: var(--cor-texto);
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
 }
-@keyframes voar{
+#sim{
+    background: greenyellow;
+    width: 25%;
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    transition: 0s;
+    box-shadow: 10px 10px 2px 2px rgba(0, 0, 0, 0.493);
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+}
+#sim:active{
+    box-shadow: 0px 0px 0px 0px transparent;
+    animation: apertar 0.2s linear;
+}
+.nao{
+    width: 50px;
+    height: 50px;
+    border: solid white;
+}
+#nao{
+    background: red;
+    width: 150px;
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    transition: 0s;
+    box-shadow: 10px 10px 2px 2px rgba(0, 0, 0, 0.493);
+    padding: 20px;
+    position: static;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+#nao:active{
+    box-shadow: 0px 0px 0px 0px transparent;
+    animation: apertar 0.2s linear;
+}
+@keyframes apertar{
     0%{
-        transform: translate(0px, 0px);
-    }
-    25%{
-        transform: translate(50px, -50px);
-        color: transparent;
-    }
-    75%{
-        transform: translate(-50px, 50px);
-        color: transparent;
+        transform: translate(20px, 10px);
     }
     100%{
-        transform: translate(0px,0px);
-        color: var(--fundo);
+        transform: translate(20px, 10px);
     }
 }
+#foto{
+    width: 50%;
+    border-radius: 15px;
+}
+.foto{
+    display: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.texto{
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+}
 @media screen and (max-width: 800px) {
-    .icon{
-        width: 15%;
-    }
-    .botao{
-        width: 30%;
-    }
-    .tema{
-        width: 10%;
-    }
     .box{
-        height: 80vh;
+        width: 80%;
     }
-    #tipo{
-        width: 50%;
+    #nao{
+        width: 80px;
     }
 }
